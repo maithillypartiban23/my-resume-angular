@@ -11,5 +11,9 @@ import { RESUME } from '../../data/resume-data';
 })
 export class Home {
   protected readonly resume = RESUME;
-}
 
+  protected assetUrl(path: string): string {
+    const normalized = path.startsWith('/') ? path.slice(1) : path;
+    return new URL(normalized, document.baseURI).toString();
+  }
+}

@@ -87,7 +87,7 @@ export const RESUME: ResumeData = {
     email: "maithilly.partiban0623@gmail.com",
     phone: "+60164326596",
     website: "",
-    photoUrl: "./Maithilly.png",
+    photoUrl: "Maithilly.png",
     links: [
       { label: "LinkedIn", url: "https://linkedin.com/in/maithillypartiban" }
     ],
