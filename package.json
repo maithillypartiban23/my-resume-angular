@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:pages": "node ./node_modules/@angular/cli/bin/ng.js build --configuration=production --base-href \"https://maithillypartiban23.github.io/my-resume-angular/\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
