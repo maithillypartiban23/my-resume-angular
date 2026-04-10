@@ -2,7 +2,7 @@
   <article class="card card-pad shell">
     <header class="top">
       <div class="photo">
-        <img [src]="assetUrl(resume.profile.photoUrl)" alt="Profile photo" />
+        <img [src]="resume.profile.photoUrl" alt="Profile photo" />
       </div>
 
       <div class="title">
@@ -19,7 +19,7 @@
           <div class="row"><span class="k">Phone</span><span class="v">{{ resume.profile.phone }}</span></div>
           <div class="row"><span class="k">Email</span><span class="v">{{ resume.profile.email }}</span></div>
           <div class="row"><span class="k">Address</span><span class="v">{{ resume.personal.address }}</span></div>
-          @if (resume.profile.links?.length) {
+          @if (resume.profile.links.length) {
             <div class="row">
               <span class="k">LinkedIn</span>
               <span class="v">
