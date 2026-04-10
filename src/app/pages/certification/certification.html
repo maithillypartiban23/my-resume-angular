@@ -1,0 +1,49 @@
+<section class="card card-pad">
+  <h1 class="page-title">Certifications</h1>
+  <p class="lead">Professional courses, certificates, and reference.</p>
+
+  <div class="items">
+    @for (c of resume.certifications; track c.name) {
+      <article class="card item card-pad">
+        <div class="top">
+          <div>
+            <div class="name">{{ c.name }}</div>
+            <div class="issuer">{{ c.issuer }}</div>
+          </div>
+          <div class="date">{{ c.date }}</div>
+        </div>
+
+        <div class="meta">
+          @if (c.credentialId) {
+            <div><span class="k">Credential ID:</span> {{ c.credentialId }}</div>
+          }
+          @if (c.url) {
+            <div>
+              <a class="link" [href]="c.url" target="_blank" rel="noreferrer">View credential</a>
+            </div>
+          }
+        </div>
+      </article>
+    }
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">Reference</h2>
+  <div class="items">
+    @for (r of resume.references; track r.name) {
+      <article class="card item card-pad ref">
+        <div class="name">{{ r.name }}</div>
+        <div class="issuer">{{ r.title }} — {{ r.organization }}</div>
+        <div class="meta">
+          @if (r.phone) {
+            <div><span class="k">Phone:</span> {{ r.phone }}</div>
+          }
+          @if (r.email) {
+            <div><span class="k">Email:</span> {{ r.email }}</div>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

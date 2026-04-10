@@ -1,0 +1,68 @@
+<section class="card card-pad">
+  <h1 class="page-title">Personal Information</h1>
+  <p class="lead">{{ resume.profile.summary }}</p>
+
+  <div class="grid cols-2 content">
+    <div class="card inner card-pad">
+      <h2 class="section-title">Contact</h2>
+      <div class="kv">
+        <div class="k">Name</div>
+        <div class="v">{{ resume.profile.name }}</div>
+        <div class="k">Email</div>
+        <div class="v">{{ resume.profile.email }}</div>
+        <div class="k">Phone</div>
+        <div class="v">{{ resume.profile.phone }}</div>
+        <div class="k">Location</div>
+        <div class="v">{{ resume.profile.location }}</div>
+      </div>
+    </div>
+
+    <div class="card inner card-pad">
+      <h2 class="section-title">Status</h2>
+      <div class="kv">
+        <div class="k">Currently</div>
+        <div class="v">{{ resume.personal.currently }}</div>
+        <div class="k">Availability</div>
+        <div class="v">{{ resume.personal.availability }}</div>
+        <div class="k">Field</div>
+        <div class="v">{{ resume.personal.field }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid cols-2 bottom">
+    <div class="card inner card-pad">
+      <h2 class="section-title">Objective</h2>
+      <p class="lead">{{ resume.personal.objective }}</p>
+    </div>
+
+    <div class="card inner card-pad">
+      <h2 class="section-title">Languages</h2>
+      <ul class="list">
+        @for (lang of resume.personal.languages; track lang.name) {
+          <li><span class="strong">{{ lang.name }}</span> — {{ lang.level }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid cols-2 bottom">
+    <div class="card inner card-pad">
+      <h2 class="section-title">Strengths</h2>
+      <ul class="list">
+        @for (s of resume.personal.strengths; track s) {
+          <li>{{ s }}</li>
+        }
+      </ul>
+    </div>
+
+    <div class="card inner card-pad">
+      <h2 class="section-title">Interests</h2>
+      <div class="chips">
+        @for (i of resume.personal.interests; track i) {
+          <span class="chip">{{ i }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</section>

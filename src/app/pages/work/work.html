@@ -1,0 +1,68 @@
+<section class="card card-pad">
+  <h1 class="page-title">Work Experience</h1>
+  <p class="lead">Work experience, leadership, and campus involvement.</p>
+
+  <div class="items">
+    @for (job of resume.work; track job.role) {
+      <article class="card item card-pad">
+        <div class="top">
+          <div>
+            <div class="role">{{ job.role }}</div>
+            <div class="org">
+              {{ job.company }} @if (job.location) { <span class="muted">• {{ job.location }}</span> }
+            </div>
+          </div>
+          <div class="period">{{ job.period }}</div>
+        </div>
+
+        <ul class="list">
+          @for (b of job.bullets; track b) {
+            <li>{{ b }}</li>
+          }
+        </ul>
+
+        @if (job.tech?.length) {
+          <div class="tech">
+            @for (t of job.tech!; track t) {
+              <span class="chip">{{ t }}</span>
+            }
+          </div>
+        }
+      </article>
+    }
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">Leadership</h2>
+  <div class="items">
+    @for (l of resume.leadership; track l.title) {
+      <article class="card item card-pad">
+        <div class="top">
+          <div>
+            <div class="role">{{ l.title }}</div>
+            <div class="org">{{ l.organization }}</div>
+          </div>
+          <div class="period">{{ l.period }}</div>
+        </div>
+        <ul class="list">
+          @for (b of l.bullets; track b) {
+            <li>{{ b }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">Awards</h2>
+  <div class="items">
+    @for (a of resume.awards; track a.name) {
+      <article class="card item card-pad award">
+        <div class="role">{{ a.name }}</div>
+        <div class="period">{{ a.date }}</div>
+      </article>
+    }
+  </div>
+</section>

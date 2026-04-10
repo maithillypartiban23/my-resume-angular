@@ -1,0 +1,39 @@
+<section class="card card-pad">
+  <h1 class="page-title">Education</h1>
+  <p class="lead">Academic background, achievements, and activities.</p>
+
+  <div class="items">
+    @for (ed of resume.education; track ed.program) {
+      <article class="card item card-pad">
+        <div class="top">
+          <div>
+            <div class="role">{{ ed.program }}</div>
+            <div class="org">
+              {{ ed.institution }} @if (ed.location) { <span class="muted">• {{ ed.location }}</span> }
+            </div>
+          </div>
+          <div class="period">{{ ed.period }}</div>
+        </div>
+
+        @if (ed.highlights?.length) {
+          <ul class="list">
+            @for (h of ed.highlights!; track h) {
+              <li>{{ h }}</li>
+            }
+          </ul>
+        }
+
+        @if (ed.activities?.length) {
+          <details class="details">
+            <summary>Activities & involvement</summary>
+            <ul class="list">
+              @for (a of ed.activities!; track a) {
+                <li>{{ a }}</li>
+              }
+            </ul>
+          </details>
+        }
+      </article>
+    }
+  </div>
+</section>

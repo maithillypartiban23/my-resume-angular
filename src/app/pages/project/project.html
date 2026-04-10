@@ -1,0 +1,46 @@
+<section class="card card-pad">
+  <h1 class="page-title">Projects</h1>
+  <p class="lead">Selected projects and what I built.</p>
+
+  <div class="items">
+    @for (p of resume.projects; track p.name) {
+      <article class="card item card-pad">
+        <div class="top">
+          <div>
+            <div class="name">{{ p.name }}</div>
+            <div class="desc">{{ p.description }}</div>
+          </div>
+          @if (p.period) {
+            <div class="period">{{ p.period }}</div>
+          }
+        </div>
+
+        @if (p.highlights?.length) {
+          <ul class="list">
+            @for (h of p.highlights!; track h) {
+              <li>{{ h }}</li>
+            }
+          </ul>
+        }
+
+        <div class="row">
+          @if (p.tech?.length) {
+            <div class="tech">
+              @for (t of p.tech!; track t) {
+                <span class="chip">{{ t }}</span>
+              }
+            </div>
+          }
+          @if (p.links?.length) {
+            <div class="links">
+              @for (l of p.links!; track l.url) {
+                <a class="link" [href]="l.url" target="_blank" rel="noreferrer">{{ l.label }}</a>
+              }
+            </div>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>
+

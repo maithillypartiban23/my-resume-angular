@@ -1,0 +1,33 @@
+<section class="card card-pad">
+  <h1 class="page-title">Skills</h1>
+  <p class="lead">Technical skills, tools, and soft skills.</p>
+
+  <div class="grid cols-2 blocks">
+    <div class="card inner card-pad">
+      <h2 class="section-title">Technical</h2>
+      <ul class="list">
+        @for (s of resume.skills.technical; track s) {
+          <li>{{ s }}</li>
+        }
+      </ul>
+    </div>
+
+    <div class="card inner card-pad">
+      <h2 class="section-title">Tools</h2>
+      <ul class="list">
+        @for (s of resume.skills.tools; track s) {
+          <li>{{ s }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="card inner card-pad soft">
+    <h2 class="section-title">Soft Skills</h2>
+    <ul class="list">
+      @for (s of resume.skills.soft; track s) {
+        <li>{{ s }}</li>
+      }
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+<section class="home">
+  <article class="card card-pad shell">
+    <header class="top">
+      <div class="photo">
+        <img [src]="resume.profile.photoUrl" alt="Profile photo" />
+      </div>
+
+      <div class="title">
+        <h1 class="name">{{ resume.profile.name }}</h1>
+        <div class="headline">{{ resume.profile.headline }}</div>
+        <div class="location">{{ resume.profile.location }}</div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="block">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact">
+          <div class="row"><span class="k">Phone</span><span class="v">{{ resume.profile.phone }}</span></div>
+          <div class="row"><span class="k">Email</span><span class="v">{{ resume.profile.email }}</span></div>
+          <div class="row"><span class="k">Address</span><span class="v">{{ resume.personal.address }}</span></div>
+          @if (resume.profile.links?.length) {
+            <div class="row">
+              <span class="k">LinkedIn</span>
+              <span class="v">
+                <a class="inline-link" [href]="resume.profile.links[0].url" target="_blank" rel="noreferrer">
+                  Open profile
+                </a>
+              </span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="block">
+        <h2 class="section-title">At a Glance</h2>
+        <div class="facts">
+          <div class="fact">
+            <div class="k">Currently</div>
+            <div class="v">{{ resume.personal.currently }}</div>
+          </div>
+          <div class="fact">
+            <div class="k">Availability</div>
+            <div class="v">{{ resume.personal.availability }}</div>
+          </div>
+          <div class="fact">
+            <div class="k">Field</div>
+            <div class="v">{{ resume.personal.field }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-block">
+      <h2 class="section-title">Student Summary</h2>
+      <p class="summary">{{ resume.profile.summary }}</p>
+    </section>
+  </article>
+</section>
